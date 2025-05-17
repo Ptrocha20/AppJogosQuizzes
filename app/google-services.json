@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "477812668048",
+    "project_id": "app-jogos-b240f",
+    "storage_bucket": "app-jogos-b240f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477812668048:android:d225f02f19f217990c8a15",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477812668048-osma9mj7j9ovtche9gedduuetermhct9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app",
+            "certificate_hash": "47743a564453f206fd4aa11fa1de0eebfe4aaf6c"
+          }
+        },
+        {
+          "client_id": "477812668048-0figduomvcnaclognsb2i5sv50j7hltb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm0mhe62Y4lZizyyYTfUqrtmiebdT7ExU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477812668048-0figduomvcnaclognsb2i5sv50j7hltb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">APP</string>
+    <string name="underline_text"><u>Não tens conta? Regista-te.</u></string>
+    <string name="subline_text"><u>Já tens conta? Inicia sessão.</u></string>
+    <string name="default_web_client_id">477812668048-gmglrdsa0shpt9c3pnsv5ularbe41a2f.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">1197503841888411</string>
+    <string name="fb_login_protocol_scheme">fb1197503841888411</string>
+    <string name="facebook_client_token">c6606c0699091ab7cfa0a54ad363ec9c</string>
+
+</resources>

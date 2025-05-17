@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/registo_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="194dp"
+        android:layout_marginEnd="309dp"
+        android:layout_marginBottom="513dp"
+        android:text="Nome:"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/nome_escrito"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="218dp"
+        android:layout_marginBottom="465dp"
+        android:drawableRight="@drawable/ic_user"
+        android:hint="Nome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="40dp" />
+
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="266dp"
+        android:layout_marginEnd="314dp"
+        android:layout_marginBottom="441dp"
+        android:text="Email:"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/email_escrito"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginBottom="393dp"
+        android:drawableRight="@drawable/ic_email"
+        android:hint="Ex: telhado@gmail.com"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="40dp" />
+
+    <TextView
+        android:id="@+id/palavra_passe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="338dp"
+        android:layout_marginEnd="245dp"
+        android:layout_marginBottom="369dp"
+        android:text="Palavra-passe:"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/palavra_passe_escrita"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="362dp"
+        android:layout_marginBottom="321dp"
+        android:drawableRight="@drawable/ic_eye_closed"
+        android:hint="Palavra-passe"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="40dp" />
+
+    <TextView
+        android:id="@+id/idade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="482dp"
+        android:layout_marginEnd="313dp"
+        android:layout_marginBottom="225dp"
+        android:text="Idade:"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118" />
+
+    <EditText
+        android:id="@+id/idade_escrita"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="506dp"
+        android:layout_marginBottom="177dp"
+        android:drawableRight="@drawable/ic_idade"
+        android:hint="Ex: 20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118"
+        tools:layout_editor_absoluteX="40dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="154dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="558dp"
+        android:gravity="center"
+        android:text="Preencha para fazer o seu registo."
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="559dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="124dp"
+        android:backgroundTint="#193180"
+        android:background="@drawable/rounded_button"
+        android:textColor="#FFFFFF"
+        android:clickable="true"
+        android:text="Registar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="621dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="90dp"
+        android:clickable="true"
+        android:text="@string/subline_text"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.627" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

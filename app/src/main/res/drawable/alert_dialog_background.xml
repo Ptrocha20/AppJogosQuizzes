@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Cor de fundo do diálogo com transparência -->
+    <solid android:color="#DD102040" />
+
+    <!-- Borda com gradiente para efeito cyber -->
+    <stroke
+        android:width="2dp"
+        android:color="#3F51B5" />
+
+    <!-- Cantos arredondados -->
+    <corners android:radius="12dp" />
+
+    <!-- Gradiente para parecer mais futurista -->
+    <gradient
+        android:angle="45"
+        android:startColor="#193180"
+        android:centerColor="#102040"
+        android:endColor="#081030"
+        android:type="linear" />
+</shape>

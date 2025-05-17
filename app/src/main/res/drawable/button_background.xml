@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Borda preta em cima -->
+    <item>
+        <shape android:shape="rectangle">
+            <size android:height="200dp" />
+            <solid android:color="#000000" />
+        </shape>
+    </item>
+
+    <!-- Fundo do botão -->
+    <item android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#193180" />
+        </shape>
+    </item>
+</layer-list>

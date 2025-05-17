@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#1414b8</color>
+    <color name="red">#ff0000</color>
+    <color name="gray">#808080</color>
+    <color name="blue_navegacao">#193180</color>#808080
+    <!-- Cores para o sistema de gamificação -->
+    <color name="primary_color">#4285F4</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="level_color">#4CAF50</color>
+    <color name="level_title_color">#4CAF50</color>
+    <!-- Cores para conquistas -->
+    <color name="conquista_adquirida">#E8F5E9</color>
+    <color name="conquista_pendente">#EEEEEE</color>
+    <color name="texto_conquista_adquirida">#2E7D32</color>
+    <color name="texto_conquista_pendente">#757575</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Cores para as conquistas -->
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="colorGray">#9E9E9E</color>
+    <color name="colorAchievementCompleted">#E8F5E9</color>
+    <color name="colorAchievementLocked">#EEEEEE</color>
+</resources>

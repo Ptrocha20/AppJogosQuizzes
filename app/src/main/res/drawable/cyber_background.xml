@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fundo base com gradiente -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#1A237E"
+                android:centerColor="#0D1851"
+                android:endColor="#050A24"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- Padrão de grade digital -->
+    <item>
+        <bitmap
+            android:src="@drawable/grid_pattern"
+            android:tileMode="repeat"
+            android:alpha="0.1" />
+    </item>
+
+    <!-- Linhas horizontais -->
+    <item>
+        <shape android:shape="rectangle">
+            <size android:height="1dp" />
+            <solid android:color="#331E88E5" />
+        </shape>
+    </item>
+
+    <!-- Efeito de brilho superior -->
+    <item android:top="-200dp" android:bottom="500dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="300dp"
+                android:startColor="#334FC3F7"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+    <!-- Pontos para simular dados digitais -->
+    <item>
+        <bitmap
+            android:src="@drawable/data_dots"
+            android:tileMode="repeat"
+            android:alpha="0.05" />
+    </item>
+</layer-list>

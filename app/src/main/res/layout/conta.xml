@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/conta_utilizador"
+    android:background="#F5F7FA"
+    tools:context=".ContaActivity">
+
+    <!-- Card superior com foto e nome do utilizador -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profileCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <!-- Imagem do Utilizador com borda circular -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/utilizador"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:contentDescription="Utilizador"
+                android:focusable="true"
+                android:src="@drawable/ic_user"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                app:tint="@color/black"/>
+
+            <!-- Ícone de editar foto -->
+            <ImageView
+                android:id="@+id/btnEditPhoto"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_background"
+                android:padding="8dp"
+                android:src="@drawable/ic_edit_photo"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Editar foto"
+                app:layout_constraintBottom_toBottomOf="@id/utilizador"
+                app:layout_constraintEnd_toEndOf="@id/utilizador"
+                app:tint="#FFFFFF"/>
+
+            <!-- Nome do Utilizador -->
+            <TextView
+                android:id="@+id/tvNomeUtilizador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do utilizador"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/utilizador"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Email do Utilizador -->
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email@exemplo.com"
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tvNomeUtilizador"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Nível do Utilizador -->
+            <TextView
+                android:id="@+id/tvNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nível 5 - Defensor Digital"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#3F51B5"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Barra de Progresso do Nível -->
+            <ProgressBar
+                android:id="@+id/progressNivel"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="8dp"
+                android:progressTint="#3F51B5"
+                android:progress="75"
+                android:max="100"
+                app:layout_constraintTop_toBottomOf="@id/tvNivel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Título das Opções -->
+    <TextView
+        android:id="@+id/tvOptionsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opções da Conta"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/profileCard"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Cards para as opções -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardEditarPerfil"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/tvOptionsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/iconEditarPerfil"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_person_edit"
+                app:tint="#3F51B5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Editar Perfil"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/iconEditarPerfil"
+                app:layout_constraintEnd_toStartOf="@id/arrowEditarPerfil"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/arrowEditarPerfil"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_forward"
+                app:tint="#757575"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardProgresso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/cardEditarPerfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/iconProgresso"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_trending_up"
+                app:tint="#3F51B5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Progresso"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/iconProgresso"
+                app:layout_constraintEnd_toStartOf="@id/arrowProgresso"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/arrowProgresso"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_forward"
+                app:tint="#757575"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardConquistas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/cardProgresso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/iconConquistas"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_trophy"
+                app:tint="#3F51B5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Conquistas"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/iconConquistas"
+                app:layout_constraintEnd_toStartOf="@id/arrowConquistas"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/arrowConquistas"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_forward"
+                app:tint="#757575"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:backgroundTint="@color/blue_navegacao"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

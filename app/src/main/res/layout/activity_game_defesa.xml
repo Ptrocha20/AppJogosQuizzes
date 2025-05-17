@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Barra superior -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#AA193180">
+
+        <!-- Pontuação -->
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pontuação: 0"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <!-- Nível -->
+        <TextView
+            android:id="@+id/levelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nível: 1"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <!-- Timer -->
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02:00"
+            android:textSize="18sp"
+            android:textColor="#FFEB3B"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <!-- Botão de pausa -->
+        <ImageButton
+            android:id="@+id/pauseButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_pause"
+            android:background="@drawable/round_button"
+            android:contentDescription="Pausar Jogo"
+            android:padding="8dp"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <!-- Vidas -->
+    <LinearLayout
+        android:id="@+id/lifeContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp">
+        <!-- Ícones de vida serão adicionados em tempo de execução -->
+    </LinearLayout>
+
+    <!-- Layout Principal do Jogo -->
+    <FrameLayout
+        android:id="@+id/gameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="160dp">
+
+        <!-- Área de Proteção da Conta -->
+        <FrameLayout
+            android:id="@+id/accountProtectionArea"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/account_shield"
+            android:elevation="8dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:src="@drawable/account_area"
+                android:contentDescription="Conta Protegida" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <!-- Contêiner de frases de segurança -->
+    <LinearLayout
+        android:id="@+id/phraseContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:background="#CC102040"
+        android:padding="16dp">
+
+        <!-- Categoria da frase -->
+        <TextView
+            android:id="@+id/categoryChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PASSWORDS"
+            android:textColor="#FFFFFF"
+            android:background="#3F51B5"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:elevation="2dp"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Texto da frase de segurança -->
+        <TextView
+            android:id="@+id/securityPhraseText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uma palavra-passe complexa é essencial para a segurança da sua conta."
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Texto de resultado (visibilidade alterada programaticamente) -->
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CORRETO! +10"
+            android:textColor="#4CAF50"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Botões de resposta -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonAnswer1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="VERDADEIRO"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_verdadeiro"
+                android:layout_marginEnd="8dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/buttonAnswer2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="FALSO"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_falso"
+                android:layout_marginStart="8dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Instruções iniciais (visíveis apenas no início) -->
+    <LinearLayout
+        android:id="@+id/instructionsOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COMO JOGAR"
+            android:textColor="#FFEB3B"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Julgue se as frases de segurança são VERDADEIRAS ou FALSAS.\n\n2. Defenda sua conta contra ataques cibernéticos.\n\n3. Respostas corretas bloqueiam ataques aleatórios.\n\n4. Preste atenção nas categorias das frases!"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginBottom="32dp"/>
+
+        <Button
+            android:id="@+id/startGameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INICIAR"
+            android:textSize="20sp"
+            android:background="@drawable/button_start"
+            android:paddingStart="48dp"
+            android:paddingEnd="48dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</FrameLayout>
