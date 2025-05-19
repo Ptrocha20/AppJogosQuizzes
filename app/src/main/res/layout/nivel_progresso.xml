@@ -57,7 +57,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:background="@color/white"
+            >
 
             <!-- Avatar do Usuário -->
             <de.hdodenhof.circleimageview.CircleImageView
@@ -81,6 +83,7 @@
                 android:layout_marginStart="16dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/imgAvatar"
                 app:layout_constraintTop_toTopOf="@id/imgAvatar"
@@ -94,6 +97,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:textSize="14sp"
+                android:textColor="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/imgAvatar"
                 app:layout_constraintTop_toBottomOf="@id/tvUsername"
@@ -106,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Nível:"
+                android:textColor="@color/gray"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -144,6 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textSize="14sp"
+                android:textColor="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvNivelLabel"
                 tools:text="250/500 XP" />
@@ -167,6 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Estatísticas:"
+                android:textColor="@color/gray"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -202,6 +209,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Quizzes"
+                        android:textColor="@color/gray"
                         android:textSize="12sp" />
                 </LinearLayout>
 
@@ -226,6 +234,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jogos"
+                        android:textColor="@color/gray"
                         android:textSize="12sp" />
                 </LinearLayout>
 
@@ -250,6 +259,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Conquistas"
+                        android:textColor="@color/gray"
                         android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -266,6 +276,7 @@
         android:text="Conquistas Recentes"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardProfile" />
 

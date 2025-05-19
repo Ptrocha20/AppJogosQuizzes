@@ -94,11 +94,12 @@
                         android:text="Português"
                         android:textSize="16sp"
                         android:textColor="#333333"
+                        android:background="@color/white"
                         android:padding="16dp"
                         android:checked="true"
                         android:button="@null"
                         android:drawableEnd="?android:attr/listChoiceIndicatorSingle"
-                        android:background="?attr/selectableItemBackground"/>
+                       />
 
                 </RadioGroup>
             </androidx.cardview.widget.CardView>

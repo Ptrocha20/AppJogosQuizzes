@@ -34,7 +34,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="24dp">
+            android:padding="24dp"
+            android:background="@color/white">
 
             <TextView
                 android:id="@+id/textViewTitulo"
@@ -43,6 +44,7 @@
                 android:text="Configurar Autenticação Multifator"
                 android:textSize="22sp"
                 android:textStyle="bold"
+                android:textColor="@color/gray"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColor="@color/gray"
                 android:text="A autenticação multifator adiciona uma camada extra de segurança à sua conta. Introduza o seu número de telefone para receber códigos de verificação."
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +69,7 @@
                 android:layout_marginTop="24dp"
                 android:background="@drawable/edit_text_background"
                 android:ems="10"
+                android:textColor="@color/gray"
                 android:hint="Número de telemóvel (ex: 912345678)"
                 android:inputType="phone"
                 android:padding="12dp"
@@ -93,6 +97,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Nota: Esta configuração irá adicionar uma etapa de verificação adicional cada vez que iniciar sessão na aplicação."
                 android:textAlignment="center"
+                android:textColor="@color/gray"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

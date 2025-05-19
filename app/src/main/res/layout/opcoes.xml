@@ -86,7 +86,7 @@
                         android:orientation="horizontal"
                         android:padding="16dp"
                         android:gravity="center_vertical"
-                        android:background="?attr/selectableItemBackground"
+                        android:background="@color/white"
                         android:focusable="true">
 
                         <ImageView
@@ -144,7 +144,7 @@
                         android:orientation="horizontal"
                         android:padding="16dp"
                         android:gravity="center_vertical"
-                        android:background="?attr/selectableItemBackground"
+                        android:background="@color/white"
                         android:focusable="true">
 
                         <ImageView
@@ -183,7 +183,7 @@
                         android:orientation="horizontal"
                         android:padding="16dp"
                         android:gravity="center_vertical"
-                        android:background="?attr/selectableItemBackground"
+                        android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true">
 

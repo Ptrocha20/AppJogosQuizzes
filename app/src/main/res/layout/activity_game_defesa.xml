@@ -77,9 +77,10 @@
     <FrameLayout
         android:id="@+id/gameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="611dp"
         android:layout_marginTop="60dp"
-        android:layout_marginBottom="160dp">
+        android:layout_marginBottom="160dp"
+        android:background="@color/white">
 
         <!-- Área de Proteção da Conta -->
         <FrameLayout
@@ -94,8 +95,8 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:src="@drawable/account_area"
-                android:contentDescription="Conta Protegida" />
+                android:contentDescription="Conta Protegida"
+                android:src="@drawable/account_area" />
         </FrameLayout>
 
     </FrameLayout>

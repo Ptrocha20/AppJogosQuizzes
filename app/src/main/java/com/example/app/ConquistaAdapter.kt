@@ -16,7 +16,7 @@ class ConquistaAdapter(
 
     private val conquistasList = todasConquistas.keys.toList()
 
-    // Definição das recompensas XP para cada conquista
+
     private val recompensaPorConquista = mapOf(
         "JOGOS_2" to "+20 XP",
         "JOGOS_5" to "+50 XP",
@@ -54,14 +54,14 @@ class ConquistaAdapter(
 
         // Adicione descrição para cada conquista
         holder.descricao.text = when (conquistaId) {
-            "JOGOS_2" -> "Complete 2 jogos de informática"
-            "JOGOS_5" -> "Complete 5 jogos de informática"
-            "JOGOS_10" -> "Complete 10 jogos de informática"
-            "QUIZZES_3" -> "Complete 3 quizzes de conhecimento"
-            "QUIZZES_7" -> "Complete 7 quizzes de conhecimento"
-            "QUIZZES_15" -> "Complete 15 quizzes de conhecimento"
-            "NIVEL_3" -> "Alcance o nível 3 de experiência"
-            "NIVEL_5" -> "Alcance o nível 5 de experiência"
+            "JOGOS_2" -> "Completa 2 jogos de informática"
+            "JOGOS_5" -> "Completa 5 jogos de informática"
+            "JOGOS_10" -> "Completa 10 jogos de informática"
+            "QUIZZES_3" -> "Completa 3 quizzes de conhecimento"
+            "QUIZZES_7" -> "Completa 7 quizzes de conhecimento"
+            "QUIZZES_15" -> "Completa 15 quizzes de conhecimento"
+            "NIVEL_3" -> "Alcança o nível 3 de experiência"
+            "NIVEL_5" -> "Alcança o nível 5 de experiência"
             else -> "Conquista especial"
         }
 
@@ -76,14 +76,14 @@ class ConquistaAdapter(
             else -> R.drawable.ic_achievement_placeholder
         }
 
-        // Usar um ícone de fallback caso o recurso não exista
+
         try {
             holder.icone.setImageResource(iconResource)
         } catch (e: Exception) {
             holder.icone.setImageResource(R.drawable.ic_achievement_placeholder)
         }
 
-        // Configurar aparência baseada no status da conquista
+
         if (obtida) {
             holder.cardView.setCardBackgroundColor(
                 ContextCompat.getColor(holder.itemView.context, R.color.colorAchievementCompleted)

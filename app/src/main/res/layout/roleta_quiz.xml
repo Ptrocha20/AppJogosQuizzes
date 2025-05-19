@@ -38,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:background="@color/white"
             android:padding="16dp"
             android:text="Gire a Roleta para Escolher uma Categoria!"
             android:textColor="#193180"
@@ -61,7 +62,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:background="@color/white">
 
             <com.example.app.RoletaView
                 android:id="@+id/roletaView"

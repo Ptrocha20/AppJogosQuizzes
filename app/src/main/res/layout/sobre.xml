@@ -110,7 +110,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:background="@color/white">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -151,7 +152,7 @@
                         android:orientation="horizontal"
                         android:padding="16dp"
                         android:gravity="center_vertical"
-                        android:background="?attr/selectableItemBackground"
+                        android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true">
 
@@ -189,7 +190,7 @@
                         android:orientation="horizontal"
                         android:padding="16dp"
                         android:gravity="center_vertical"
-                        android:background="?attr/selectableItemBackground"
+                        android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true">
 
@@ -237,7 +238,7 @@
                         android:orientation="horizontal"
                         android:padding="16dp"
                         android:gravity="center_vertical"
-                        android:background="?attr/selectableItemBackground"
+                        android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true">
 

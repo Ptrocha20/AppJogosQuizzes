@@ -3,13 +3,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#F5F7FA">
 
     <TextView
         android:id="@+id/gameResultTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Resultado do Jogo"
+        android:textColor="@color/gray"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="20dp"/>
@@ -19,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pontuação Final: 0"
+        android:textColor="@color/gray"
         android:textSize="20sp"
         android:layout_marginBottom="10dp"/>
 
@@ -28,6 +31,7 @@
         android:layout_height="wrap_content"
         android:text="XP: 0"
         android:textSize="20sp"
+        android:textColor="@color/gray"
         android:layout_marginBottom="20dp"/>
 
     <Button

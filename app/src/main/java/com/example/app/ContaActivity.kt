@@ -22,7 +22,7 @@ class ContaActivity : AppCompatActivity() {
     private lateinit var progressNivel: ProgressBar
     private lateinit var auth: FirebaseAuth
 
-    // Definição dos níveis e XP necessário
+
     private val xpPorNivel = mapOf(
         1 to 100,  // Para atingir o nível 2, precisa de 100 XP
         2 to 250,  // Para atingir o nível 3, precisa de 250 XP
@@ -31,7 +31,7 @@ class ContaActivity : AppCompatActivity() {
         5 to 2000  // Para atingir o nível 6, precisa de 2000 XP
     )
 
-    // Definição dos títulos por nível
+
     private val tituloPorNivel = mapOf(
         1 to "Novato",
         2 to "Aprendiz",
@@ -46,17 +46,16 @@ class ContaActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.conta)
 
-        // Inicializar Firebase
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
-        // Inicializar vistas
+
         tvNomeUtilizador = findViewById(R.id.tvNomeUtilizador)
         tvEmail = findViewById(R.id.tvEmail)
         tvNivel = findViewById(R.id.tvNivel)
         progressNivel = findViewById(R.id.progressNivel)
 
-        // Tentar encontrar o TextView para o título do nível
+
         try {
             tvNivelTitulo = findViewById(R.id.tvNivelTitulo)
         } catch (e: Exception) {
@@ -96,14 +95,14 @@ class ContaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Configurar Bottom Navigation
+
         setupBottomNavigation()
     }
 
     private fun setupBottomNavigation() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        // Definir o item ativo no menu de navegação
+
         bottomNavigationView.selectedItemId = R.id.nav_profile
 
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -161,15 +160,15 @@ class ContaActivity : AppCompatActivity() {
     }
 
     private fun atualizarBarraProgresso(nivel: Int, xp: Int) {
-        // Atualizar o texto do nível
+
         val nivelTexto = "Nível $nivel - ${tituloPorNivel[nivel] ?: "Desconhecido"}"
 
-        // Verifica se temos um TextView separado para o título do nível
+
         if (::tvNivelTitulo.isInitialized) {
             tvNivel.text = nivel.toString()
             tvNivelTitulo.text = tituloPorNivel[nivel] ?: "Desconhecido"
         } else {
-            // Se não, usamos o TextView existente para mostrar tudo
+
             tvNivel.text = nivelTexto
         }
 

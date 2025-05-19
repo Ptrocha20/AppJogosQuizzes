@@ -17,7 +17,7 @@ class BottomNavigation(private val activity: Activity) {
                         val intent = Intent(activity, PaginaInicialActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         activity.startActivity(intent)
-                        activity.overridePendingTransition(0, 0) // Remove animação de transição
+                        activity.overridePendingTransition(0, 0)
                     }
                     true
                 }

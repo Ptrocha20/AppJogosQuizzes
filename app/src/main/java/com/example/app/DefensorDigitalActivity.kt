@@ -268,18 +268,15 @@ class DefensorDigitalActivity : AppCompatActivity() {
     }
 
     private fun showFeedbackDialog(isCorrect: Boolean, feedback: String) {
-        // Configurar aparência baseada no resultado
+
         feedbackCard.setCardBackgroundColor(
             if (isCorrect) Color.parseColor("#4CAF50") else Color.parseColor("#F44336")
         )
 
-        // Definir texto de feedback
         tvFeedback.text = feedback
 
-        // Mostrar card de feedback
         feedbackCard.visibility = View.VISIBLE
 
-        // Esconder após delay
         Handler(Looper.getMainLooper()).postDelayed({
             feedbackCard.visibility = View.GONE
         }, 2000)

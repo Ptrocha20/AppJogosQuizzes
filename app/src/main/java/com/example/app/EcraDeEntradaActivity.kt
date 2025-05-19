@@ -13,7 +13,7 @@ class EcraDeEntradaActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.inicio)
 
-        //Evitar animações desnecessárias ao abrir o teclado
+
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
         val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager

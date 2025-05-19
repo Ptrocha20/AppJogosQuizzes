@@ -2,7 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -38,6 +39,7 @@
             android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="Jogos e Quizzes"
+            android:textColor="@color/gray"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -79,6 +81,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Quiz: Segurança Digital"
+                            android:textColor="@color/gray"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -95,7 +98,9 @@
                         android:id="@+id/playButton1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jogar" />
+                        android:text="Jogar"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/lightgray"/>
                 </LinearLayout>
 
                 <!-- Jogo/Quiz 2 -->
@@ -126,6 +131,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Jogo: Proteja sua Conta"
+                            android:textColor="@color/gray"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -142,7 +148,9 @@
                         android:id="@+id/playButton2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jogar" />
+                        android:text="Jogar"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/lightgray"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -172,6 +180,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Quiz: Defensor Digital"
+                            android:textColor="@color/gray"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -188,7 +197,9 @@
                         android:id="@+id/playButton3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jogar" />
+                        android:text="Jogar"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/lightgray"/>
                 </LinearLayout>
 
             </LinearLayout>

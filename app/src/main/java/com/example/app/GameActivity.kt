@@ -11,6 +11,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import android.view.animation.AccelerateInterpolator
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -32,6 +33,7 @@ class GameActivity : AppCompatActivity() {
     private var attackTimer: CountDownTimer? = null
     private var gameTimer: CountDownTimer? = null
     private var timeRemaining: Long = GAME_DURATION
+    private var layoutReady = false
 
     // Lista expandida de frases com categorias
     private val securityPhrases = listOf(
@@ -73,6 +75,7 @@ class GameActivity : AppCompatActivity() {
         const val BONUS_POINTS_STREAK = 5
         const val LEVEL_UP_THRESHOLD = 50
         const val GAME_DURATION = 120000L    // 2 minutos em milissegundos
+        const val DEFAULT_SIZE = 100 // Default size for attacks if layout not measured yet
     }
 
     data class SecurityPhrase(val text: String, val isCorrect: Boolean, val category: String)
@@ -88,12 +91,17 @@ class GameActivity : AppCompatActivity() {
         // Obter dados da intent
         email = intent.getStringExtra("EMAIL")
 
-        // Configurar jogo
-        setupGame()
-
-
-        // Iniciar temporizador do jogo
-        startGameTimer()
+        // Configurar jogo após o layout ser medido
+        gameLayout.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                if (gameLayout.width > 0 && gameLayout.height > 0 && !layoutReady) {
+                    layoutReady = true
+                    gameLayout.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                    setupGame()
+                    startGameTimer()
+                }
+            }
+        })
     }
 
     private fun initializeViews() {
@@ -178,7 +186,7 @@ class GameActivity : AppCompatActivity() {
 
         attackTimer = object : CountDownTimer(GAME_DURATION, currentSpeed) {
             override fun onTick(millisUntilFinished: Long) {
-                if (activeAttacks < MAX_ATTACKS) {
+                if (activeAttacks < MAX_ATTACKS && layoutReady) {
                     launchAttack()
                 }
             }
@@ -438,6 +446,10 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun launchAttack() {
+        if (!layoutReady || gameLayout.width <= 0 || gameLayout.height <= 0) {
+            return // Não lançar ataques se o layout não estiver pronto
+        }
+
         activeAttacks++
 
         // Criar ataque com imagem aleatória
@@ -465,18 +477,24 @@ class GameActivity : AppCompatActivity() {
 
         gameLayout.addView(attackImage)
         moveAttack(attackImage)
-
     }
 
     private fun getRandomStartPosition(): Pair<Int, Int> {
+        // Verificar se o layout está pronto
+        if (gameLayout.width <= 0 || gameLayout.height <= 0) {
+            return Pair(0, 0) // Posição padrão segura se o layout não estiver pronto
+        }
+
         // Determinar uma posição aleatória para o ataque nas bordas da tela
         val side = (0..3).random() // 0: topo, 1: direita, 2: baixo, 3: esquerda
+        val maxWidth = maxOf(1, gameLayout.width - 100)  // Garantir que seja pelo menos 1
+        val maxHeight = maxOf(1, gameLayout.height - 100)  // Garantir que seja pelo menos 1
 
         return when (side) {
-            0 -> Pair(0, (0..gameLayout.width - 100).random()) // Topo
-            1 -> Pair((0..gameLayout.height - 100).random(), gameLayout.width - 100) // Direita
-            2 -> Pair(gameLayout.height - 100, (0..gameLayout.width - 100).random()) // Baixo
-            else -> Pair((0..gameLayout.height - 100).random(), 0) // Esquerda
+            0 -> Pair(0, (0 until maxWidth).random()) // Topo
+            1 -> Pair((0 until maxHeight).random(), maxOf(0, maxWidth)) // Direita
+            2 -> Pair(maxOf(0, maxHeight), (0 until maxWidth).random()) // Baixo
+            else -> Pair((0 until maxHeight).random(), 0) // Esquerda
         }
     }
 
@@ -578,7 +596,6 @@ class GameActivity : AppCompatActivity() {
 
         // Reduzir vida
         decreaseLife()
-
     }
 
     private fun decreaseLife() {
@@ -674,7 +691,6 @@ class GameActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

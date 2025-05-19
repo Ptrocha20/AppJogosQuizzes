@@ -58,12 +58,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:background="@color/white">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Resumo de Conquistas"
+                android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -94,6 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Desbloqueadas"
+                        android:textColor="@color/gray"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -110,6 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="24sp"
+                        android:textColor="@color/gray"
                         android:textStyle="bold"
                         tools:text="8" />
 
@@ -117,6 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total"
+                        android:textColor="@color/gray"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -141,6 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Completado"
+                        android:textColor="@color/gray"
                         android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>

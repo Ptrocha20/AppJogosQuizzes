@@ -9,7 +9,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
-import java.security.SecureRandom
 
 class VerificacaoMFAActivity : AppCompatActivity() {
 
@@ -20,7 +19,7 @@ class VerificacaoMFAActivity : AppCompatActivity() {
 
     private var contagemRegressiva: CountDownTimer? = null
     private var numeroTelemovel: String = ""
-    private var codigoVerificacao: String = ""
+    private var codigoVerificacao: String = "12345" // Código fixo para testes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +33,8 @@ class VerificacaoMFAActivity : AppCompatActivity() {
         textViewReenviar = findViewById(R.id.textViewReenviar)
         textViewContador = findViewById(R.id.textViewContador)
 
-        // Gera código de verificação inicial
-        gerarCodigoVerificacao()
+        // Salva o código fixo de verificação
+        salvarCodigoVerificacao()
 
         // Inicia contagem regressiva
         iniciarContagemRegressiva()
@@ -49,11 +48,8 @@ class VerificacaoMFAActivity : AppCompatActivity() {
         }
     }
 
-    private fun gerarCodigoVerificacao() {
-        // Gera código de 6 dígitos
-        codigoVerificacao = String.format("%06d", SecureRandom().nextInt(1000000))
-
-        // Salva código em preferências (ou poderia enviar via SMS em produção)
+    private fun salvarCodigoVerificacao() {
+        // Salva código em preferências
         val prefs = getSharedPreferences("MFA_PREFS", MODE_PRIVATE)
         prefs.edit {
             putString("CODIGO_VERIFICACAO", codigoVerificacao)
@@ -71,11 +67,8 @@ class VerificacaoMFAActivity : AppCompatActivity() {
             return
         }
 
-        // Verifica o código salvo nas preferências
-        val prefs = getSharedPreferences("MFA_PREFS", MODE_PRIVATE)
-        val codigoSalvo = prefs.getString("CODIGO_VERIFICACAO", "")
-
-        if (codigoInserido == codigoSalvo) {
+        // Para desenvolvimento, apenas verifica se o código é "12345"
+        if (codigoInserido == "12345") {
             // Código correto - ativa MFA
             val prefsApp = getSharedPreferences("APP_PREFS", MODE_PRIVATE)
             prefsApp.edit {
@@ -111,8 +104,8 @@ class VerificacaoMFAActivity : AppCompatActivity() {
     }
 
     private fun reenviarCodigo() {
-        // Gera novo código
-        gerarCodigoVerificacao()
+        // Para testes, mantém o mesmo código fixo
+        salvarCodigoVerificacao()
 
         // Reinicia o contador
         contagemRegressiva?.cancel()
